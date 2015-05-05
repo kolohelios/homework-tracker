@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('poseidon')
-.factory('User', function($rootScope){
+angular.module('homework-tracker')
+.factory('User', function($rootScope, $http, nodeUrl){
 
   function User(){
   }
@@ -16,6 +16,14 @@ angular.module('poseidon')
 
   User.logout = function(){
     return $rootScope.afAuth.$unauth();
+  };
+
+  User.oauth = function(provider){
+    return $rootScope.afAuth.$authWithOAuthPopup(provider);
+  };
+
+  User.findOrCreate = function(){
+    return $http.post(nodeUrl + '/users');
   };
 
   return User;

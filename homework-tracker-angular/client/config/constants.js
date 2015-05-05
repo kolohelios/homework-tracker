@@ -1,4 +1,5 @@
 'use strict';
 
-angular.module('poseidon')
-.constant('firebaseUrl', 'https://ENTER-YOUR-FB-URL.firebaseio.com/');
+angular.module('homework-tracker')
+.constant('firebaseUrl', 'https://homework-tracker.firebaseio.com/')
+.constant('nodeUrl', 'http://localhost:8000');
